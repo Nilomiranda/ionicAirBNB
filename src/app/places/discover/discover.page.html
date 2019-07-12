@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Discover Places</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-card>
+          <ion-card-header>{{ loadedPlaces[0].title }}</ion-card-header>
+          <ion-img [src]="loadedPlaces[0].imageUrl"></ion-img>
+          <ion-card-content>
+            <ion-text>{{ loadedPlaces[0].description }}</ion-text>
+            <ion-text>{{ loadedPlaces[0].price }}</ion-text>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

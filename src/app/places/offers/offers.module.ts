@@ -7,11 +7,13 @@ import { IonicModule } from '@ionic/angular';
 
 import { OffersPage } from './offers.page';
 
+import { OfferItemComponent } from './offer-item/offer-item.component';
+
 const routes: Routes = [
   {
     path: '',
-    component: OffersPage
-  }
+    component: OffersPage,
+  },
 ];
 
 @NgModule({
@@ -19,8 +21,8 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
   ],
-  declarations: [OffersPage]
+  declarations: [OffersPage, OfferItemComponent],
 })
 export class OffersPageModule {}

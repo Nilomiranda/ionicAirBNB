@@ -5,32 +5,44 @@
 </ion-header>
 
 <ion-content padding>
-  <!-- <ion-spinner color="primary" *ngIf="isLoading"></ion-spinner> -->
-  <ion-grid>
-    <ion-row>
-      <ion-col size-sm="6" offset-sm="3">
-        <ion-list>
-          <ion-item>
-            <ion-label position="floating">Email</ion-label>
-            <ion-input type="email"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-label position="floating">Password</ion-label>
-            <ion-input type="password"></ion-input>
-          </ion-item>
-        </ion-list>
-      </ion-col>
-    </ion-row>
+  <form #formEl="ngForm" (ngSubmit)="onSubmit(formEl)">
+    <ion-grid>
+      <ion-row>
+        <ion-col size-sm="6" offset-sm="3">
+          <ion-list>
+            <ion-item>
+              <ion-label position="floating">Email</ion-label>
+              <ion-input type="email" required ngModel name="email"></ion-input>
+            </ion-item>
+            <ion-item>
+              <ion-label position="floating">Password</ion-label>
+              <ion-input
+                type="password"
+                ngModel
+                name="password"
+                required
+                minlength="6"
+              ></ion-input>
+            </ion-item>
+          </ion-list>
+        </ion-col>
+      </ion-row>
 
-    <ion-row>
-      <ion-col size-sm="6" offset-sm="3">
-        <ion-button color="primry" fill="clear" expand="full">
-          Switch to login
-        </ion-button>
-        <ion-button color="primary" (click)="onLogin()" expand="full">
-          Login
-        </ion-button>
-      </ion-col>
-    </ion-row>
-  </ion-grid>
+      <ion-row>
+        <ion-col size-sm="6" offset-sm="3">
+          <ion-button type="button" color="primry" fill="clear" expand="full">
+            Switch to login
+          </ion-button>
+          <ion-button
+            type="submit"
+            color="primary"
+            (click)="onLogin()"
+            expand="full"
+          >
+            Login
+          </ion-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </form>
 </ion-content>
